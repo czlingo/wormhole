@@ -1,5 +1,5 @@
 package core
 
 type Executor interface {
-	Exec(path string, cmds []string) (string, error)
+	Exec(path string, cmd *Task) error
 }
