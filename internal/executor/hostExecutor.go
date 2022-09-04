@@ -6,20 +6,20 @@ import (
 )
 
 type HostExecutor struct {
-	out    *os.File
-	task   *Task
+	Out    *os.File
+	Task   *Task
 	Status bool
 }
 
 func (executor *HostExecutor) Init(out *os.File, task *Task) {
-	executor.task = task
-	executor.out = out
+	executor.Task = task
+	executor.Out = out
 }
 
 func (executor *HostExecutor) Exec(path string, task *Task) error {
 	cmd := exec.Command(task.Cmd, task.Args...)
 	cmd.Dir = path
-	cmd.Stdout = executor.out
+	cmd.Stdout = executor.Out
 
 	if err := cmd.Start(); err != nil {
 		return err

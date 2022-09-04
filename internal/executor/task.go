@@ -13,6 +13,7 @@ func ParseRun(run string) *Task {
 		return nil
 	}
 
+	// FIXME: "hello world"
 	words := strings.Split(run, " ")
 	return &Task{
 		Cmd:  words[0],
