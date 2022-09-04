@@ -1,8 +1,14 @@
-package workflow
+package executor
 
-type Action struct {
-	Version string
+const (
+	LINUX   = "linux"
+	WINDOWS = "windows"
+	DOCKER  = "docker"
+)
+
+type Job struct {
 	Name    string
+	Version string
 	Env     map[string]string
 	Steps   []Step
 }

@@ -11,13 +11,13 @@ type HostExecutor struct {
 	Status bool
 }
 
-func (executor *HostExecutor) Init(out *os.File, task *Task) {
+func (executor *HostExecutor) Handle(out *os.File, task *Task) {
 	executor.Task = task
 	executor.Out = out
 }
 
-func (executor *HostExecutor) Exec(path string, task *Task) error {
-	cmd := exec.Command(task.Cmd, task.Args...)
+func (executor *HostExecutor) Exec(path string) error {
+	cmd := exec.Command(executor.Task.Cmd, executor.Task.Args...)
 	cmd.Dir = path
 	cmd.Stdout = executor.Out
 
