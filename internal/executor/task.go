@@ -1,8 +1,9 @@
-package core
+package executor
 
 import "strings"
 
 type Task struct {
+	ID   string
 	Cmd  string
 	Args []string
 }
