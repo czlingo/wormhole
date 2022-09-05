@@ -1,4 +1,4 @@
-package executor
+package runner
 
 import (
 	"os"
@@ -6,15 +6,15 @@ import (
 	"github.com/czlingo/wormhole/internal/errors"
 )
 
-type Executor interface {
-	Exec(path string) error
-	Handle(out *os.File, task *Task)
+type executor interface {
+	Run(path string) error
+	Handle(out *os.File, task []*task)
 }
 
-func NewExecutor(runsOn string) (Executor, error) {
+func newExecutor(runsOn string) (executor, error) {
 	switch runsOn {
 	case LINUX, WINDOWS:
-		return &HostExecutor{}, nil
+		return &hostExecutor{}, nil
 	case DOCKER:
 		// TODO:
 	}

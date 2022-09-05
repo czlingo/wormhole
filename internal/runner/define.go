@@ -1,4 +1,4 @@
-package executor
+package runner
 
 const (
 	LINUX   = "linux"
@@ -6,7 +6,7 @@ const (
 	DOCKER  = "docker"
 )
 
-type Job struct {
+type Pipeline struct {
 	Name    string
 	Version string
 	Env     map[string]string
