@@ -26,7 +26,9 @@ func Handle(pipe *Pipeline) error {
 
 		executor.Handle(out, tasks)
 		// TODO: change path
-		executor.Run(config.DATA_PATH)
+		if err := executor.Run(config.DATA_PATH); err != nil {
+			return err
+		}
 	}
 	return nil
 }

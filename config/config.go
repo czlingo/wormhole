@@ -2,5 +2,5 @@ package config
 
 const (
 	VERSION   = "Alpha-0.1"
-	DATA_PATH = "./"
+	DATA_PATH = "./testdata"
 )

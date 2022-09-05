@@ -26,6 +26,7 @@ func parseRun(run string) *task {
 }
 
 func (t *task) Run(path string, out *os.File) error {
+	// FIXME: can not exec redirect '>' & pipeline '|'
 	cmd := exec.Command(t.Cmd, t.Args...)
 	cmd.Dir = path
 	cmd.Stdout = out
