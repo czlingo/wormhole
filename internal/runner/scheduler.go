@@ -4,9 +4,10 @@ import (
 	"os"
 
 	"github.com/czlingo/wormhole/config"
+	"github.com/czlingo/wormhole/internal/define"
 )
 
-func Handle(pipe *Pipeline) error {
+func Handle(pipe *define.Pipeline) error {
 	// TODO: change id & change path
 	out, err := os.Create(pipe.Name)
 	if err != nil {

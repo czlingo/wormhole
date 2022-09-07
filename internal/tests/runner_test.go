@@ -3,15 +3,16 @@ package tests
 import (
 	"testing"
 
+	"github.com/czlingo/wormhole/internal/define"
 	"github.com/czlingo/wormhole/internal/runner"
 )
 
 func TestRunner(t *testing.T) {
-	err := runner.Handle(&runner.Pipeline{
+	err := runner.Handle(&define.Pipeline{
 		Name:    "test",
 		Version: "test",
 		Env:     nil,
-		Steps: []runner.Step{
+		Steps: []define.Step{
 			{
 				Name:   "clone",
 				RunsOn: "linux",
