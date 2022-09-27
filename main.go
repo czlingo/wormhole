@@ -12,8 +12,9 @@ func main() {
 		Name:        "Wormhole",
 		Usage:       "wormhole command",
 		Description: "",
-		Commands:    []*cli.Command{
+		Commands: []*cli.Command{
 			cmd.CMDVersion,
+			cmd.CMDServer,
 		},
 	}
 
