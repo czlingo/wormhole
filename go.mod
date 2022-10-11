@@ -6,6 +6,8 @@ require (
 	github.com/4004-prison/cli v1.0.1-0.20220907114124-f015073ccf4e
 	github.com/gin-gonic/gin v1.8.1
 	gopkg.in/yaml.v3 v3.0.1
+	gorm.io/driver/mysql v1.4.1
+	gorm.io/gorm v1.24.0
 )
 
 require (
@@ -13,7 +15,10 @@ require (
 	github.com/go-playground/locales v0.14.0 // indirect
 	github.com/go-playground/universal-translator v0.18.0 // indirect
 	github.com/go-playground/validator/v10 v10.11.0 // indirect
+	github.com/go-sql-driver/mysql v1.6.0 // indirect
 	github.com/goccy/go-json v0.9.11 // indirect
+	github.com/jinzhu/inflection v1.0.0 // indirect
+	github.com/jinzhu/now v1.1.5 // indirect
 	github.com/json-iterator/go v1.1.12 // indirect
 	github.com/leodido/go-urn v1.2.1 // indirect
 	github.com/mattn/go-isatty v0.0.16 // indirect
