@@ -26,6 +26,14 @@ func initRoute(r *Router) {
 	{
 		apiBase.GET("/ping", api.Ping)
 	}
+
+	pipeline := api.NewPipeline()
+	pipelineGroup := apiBase.Group("/pipeline")
+	{
+		pipelineGroup.POST("", pipeline.Save)
+		pipelineGroup.DELETE("/:id", pipeline.Delete)
+		pipelineGroup.GET("/:id", pipeline.Get)
+	}
 }
 
 func (r *Router) RunOrDie(port string) {
