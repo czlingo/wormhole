@@ -5,6 +5,8 @@ import (
 
 	"github.com/czlingo/wormhole/internal/define"
 	"github.com/czlingo/wormhole/internal/model"
+	"github.com/czlingo/wormhole/internal/model/mysql"
+	"gorm.io/gorm"
 )
 
 type Pipeline interface {
@@ -18,9 +20,10 @@ type pipeline struct {
 	repo model.PipelineRepo
 }
 
-func NewPipeline() Pipeline {
-	// TODO: init
-	return &pipeline{}
+func NewPipeline(db *gorm.DB) Pipeline {
+	return &pipeline{
+		repo: mysql.NewPipelineRepo(db),
+	}
 }
 
 type SavePipelineReq struct {

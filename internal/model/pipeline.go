@@ -1,5 +1,9 @@
 package model
 
+const (
+	PipelineTable = "pipeline"
+)
+
 type Pipeline struct {
 	ID         string `json:"id"`
 	Name       string `json:"name"`
@@ -11,6 +15,6 @@ type Pipeline struct {
 type PipelineRepo interface {
 	Insert(...*Pipeline) error
 	Query(ids ...string) ([]*Pipeline, error)
-	SaveOrUpdate(...*Pipeline) error
+	// SaveOrUpdate(...*Pipeline) error
 	Delete(ids ...string) error
 }

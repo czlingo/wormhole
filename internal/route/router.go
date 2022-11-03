@@ -4,6 +4,7 @@ import (
 	"strings"
 
 	"github.com/czlingo/wormhole/internal/api"
+	"github.com/czlingo/wormhole/internal/model"
 	"github.com/gin-gonic/gin"
 )
 
@@ -20,14 +21,13 @@ func New() *Router {
 }
 
 func initRoute(r *Router) {
-	// TODO:
 	apiBase := r.g.Group("/api")
 
 	{
 		apiBase.GET("/ping", api.Ping)
 	}
 
-	pipeline := api.NewPipeline()
+	pipeline := api.NewPipeline(model.GetDB())
 	pipelineGroup := apiBase.Group("/pipeline")
 	{
 		pipelineGroup.POST("", pipeline.Save)

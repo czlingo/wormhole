@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS pipeline
+DROP TABLE IF EXISTS pipeline;
 CREATE TABLE pipeline (
     `id`            VARCHAR(64)         PRIMARY KEY,
     `name`          VARCHAR(64)         NOT NULL,

@@ -5,15 +5,16 @@ import (
 
 	"github.com/czlingo/wormhole/internal/service"
 	"github.com/gin-gonic/gin"
+	"gorm.io/gorm"
 )
 
 type Pipeline struct {
 	svc service.Pipeline
 }
 
-func NewPipeline() *Pipeline {
+func NewPipeline(db *gorm.DB) *Pipeline {
 	return &Pipeline{
-		svc: service.NewPipeline(),
+		svc: service.NewPipeline(db),
 	}
 }
 

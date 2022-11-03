@@ -14,7 +14,7 @@ var CMDServer = &cli.Command{
 		port := ctx.String("--port")
 
 		config := define.InitConfig()
-		_, err := model.New(config)
+		_, err := model.NewDB(config)
 		if err != nil {
 			panic(err)
 		}

@@ -14,7 +14,7 @@ var (
 	db *gorm.DB
 )
 
-func New(config *define.Config) (*gorm.DB, error) {
+func NewDB(config *define.Config) (*gorm.DB, error) {
 	gormDB, err := newDB()
 	if err != nil {
 		return nil, err
